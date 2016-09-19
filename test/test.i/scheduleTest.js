@@ -8,6 +8,7 @@ describe('schedule', () => {
         const promise = main(__dirname + '/data/default-input.txt');
         promise.then(conference => {
             expect(conference.schedule.length).toBe(2);
+            console.log(conference.schedule);
             let track1 = conference.schedule[0].schedule;
             let track2 = conference.schedule[1].schedule;
             let allevents = _.values(track1).concat(_.values(track2));
@@ -44,7 +45,7 @@ function checkTimingsForTrack(track) {
         
         //expect(expectedStartTime.diff(startTime)).toBe(0);
         if (expectedStartTime.diff(startTime) !== 0) {
-            console.log(`-- expected start of ${event} was ${expectedStartTime.format('hh:mmA')} but it is ${startTime.format('hh:mmA')}`); // eslint-disable-line
+            console.log(`-- WARNING:: expected start of ${event} was ${expectedStartTime.format('hh:mmA')} but it is ${startTime.format('hh:mmA')}`); // eslint-disable-line
             if (event !== 'Lunch' && startTime.format('hh:mmA') !== '12:00PM') {
                 return false;
             }

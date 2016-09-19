@@ -21,6 +21,10 @@ class Slot {
         return this._duration.canYouAccomodate(event.duration);
     }
 
+    hasRoomLeft() {
+        return this._duration.lengthInMinutes >= 5;
+    }
+
     addEvent(event) {
         if (!this.hasRoomFor(event) || this._closed) {
             throw new Error('not enough room to fit this event: ' + event.name);
