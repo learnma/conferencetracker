@@ -1,0 +1,32 @@
+{
+  "name": "conferencetracker",
+  "version": "0.0.1",
+  "description": "a conference management application to automate scheduling of events",
+  "main": "index.js",
+  "scripts": {
+    "test.u": "jasmine test/test.u/**/*.js",
+    "test.i": "jasmine test/test.i/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madhanganesh/conferencetracker.git"
+  },
+  "keywords": [
+    "node.js",
+    "conference-tracker"
+  ],
+  "author": "madhanganesh@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madhanganesh/conferencetracker/issues"
+  },
+  "homepage": "https://github.com/madhanganesh/conferencetracker#readme",
+  "dependencies": {
+    "jasmine": "^2.5.2",
+    "lodash": "^4.15.0",
+    "moment": "^2.15.0"
+  },
+  "devDependencies": {
+    "memorystream": "^0.3.1"
+  }
+}
