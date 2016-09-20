@@ -10,11 +10,16 @@ const NOON_SLOT_DURATION = Duration.createSlotDuration(240);
 
 class Slot {
 
-    constructor(startTime, duration) {
+    constructor(startTime, duration, name='') {
         this._startTime = startTime;
         this._duration = duration;
         this._events = [];
         this._closed = false;
+        this._name = name;
+    }
+
+    get name() {
+        return this._name;
     }
 
     hasRoomFor(event) {
@@ -57,24 +62,24 @@ class Slot {
         return schedule;
     }
 
-    static new(startTime, lengthInMinutes) {
-        return new Slot(startTime, Duration.newDurationForSlot(lengthInMinutes));
+    static new(startTime, lengthInMinutes, name='') {
+        return new Slot(startTime, Duration.newDurationForSlot(lengthInMinutes), name);
     }
 
     static newMorningSlot() {
         // Always make a copy duration
         const duration = Duration.createSlotDuration(MORNING_SLOT_DURATION.lengthInMinutes); 
-        return new Slot(MORNING_SLOT_START_TIME, duration);
+        return new Slot(MORNING_SLOT_START_TIME, duration, 'Morning Slot');
     }
 
     static newLunchSlot() {
         const duration = Duration.createSlotDuration(LUNCH_SLOT_DURATION.lengthInMinutes);
-        return new Slot(LUNCH_SLOT_START_TIME, duration);
+        return new Slot(LUNCH_SLOT_START_TIME, duration, 'Lunch Slot');
     }
 
     static newNoonSlot() {
         const duration = Duration.createSlotDuration(NOON_SLOT_DURATION.lengthInMinutes); 
-        return new Slot(NOON_SLOT_START_TIME, duration);
+        return new Slot(NOON_SLOT_START_TIME, duration, 'Noon Slot');
     }
 }
 
