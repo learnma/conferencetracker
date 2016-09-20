@@ -1,3 +1,6 @@
+/**
+ * Track reprsents a specific track in the session. It contains multiple slots.
+ */
 class Track {
 
     constructor(name) {

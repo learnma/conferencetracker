@@ -9,6 +9,11 @@ const LUNCH_SLOT_DURATION = Duration.createSlotDuration(60);
 const NOON_SLOT_START_TIME = LUNCH_SLOT_DURATION.addDuration(moment(LUNCH_SLOT_START_TIME));
 const NOON_SLOT_DURATION = Duration.createSlotDuration(240);
 
+/**
+ * A slot abstracts a slot in the track. A track can contain morning, lunch and noon slots
+ * Each slot contain the events based on their capacity. The slot maintains its duration state 
+ * and updates and events are added to the same.
+ */
 class Slot {
 
     constructor(startTime, duration, name='') {
@@ -70,6 +75,15 @@ class Slot {
             time = moment(time).add(event._duration.lengthInMinutes, 'minutes');
         });
         return schedule;
+    }
+
+    get displayString() {
+        const displayString = [];
+        const schedule = this.schedule;
+        for (const key in schedule) {
+            displayString.push(` [${key}-${schedule[key]}] `);
+        }
+        return displayString.join();
     }
 
     static new(startTime, lengthInMinutes, name='') {

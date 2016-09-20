@@ -4,7 +4,10 @@ const Duration = require('../models/duration');
 const Event = require('../models/event');
 
 /**
- * TODO
+ * A function that abstracts reading of input stream and return array of Events.
+ * The inputstream is expected to contain the entries in following format:
+ *     Writing Fast Tests Against Enterprise Rails 60min
+ *     Overdoing it in Python 45min 
  */
 const inputReader = function(stream) {
 

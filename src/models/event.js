@@ -1,5 +1,8 @@
 const Duration = require('./duration');
 
+/** 
+ * This class abstracts raw event in teh conference. It is identified by its name.
+ */
 class Event {
 
     constructor(name, duration, kind='normal') {
