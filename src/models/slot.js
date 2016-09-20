@@ -1,3 +1,4 @@
+const _ = require('lodash');
 const moment = require('moment');
 const Duration = require('./duration');
 
@@ -37,6 +38,15 @@ class Slot {
 
         this._events.push(event);
         this._duration.reduceLengthBy(event.duration);
+    }
+
+    replaceEvent(event, newEvent) {
+        const oldEvent = _.find(this._events, e => e._name === event._name);
+        if (oldEvent) {
+            this._events = _.without(this._events, oldEvent);
+            this._duration.addLengthBy(oldEvent.duration);
+            this.addEvent(newEvent);
+        }
     }
 
     addNetworkingEvent(event) {

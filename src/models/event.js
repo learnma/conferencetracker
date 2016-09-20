@@ -16,6 +16,10 @@ class Event {
         return this._duration;
     }
 
+    get kind() {
+        return this._kind;
+    }
+
     get displayString() {
         switch (this._kind) {
         case 'normal':

@@ -1,23 +1,22 @@
 const slotOptimizer = (slot, events) => {
-    console.log('----- running slot optimizer for ' + slot.name + '----------');
     const gapLeft = slot.remainingDuration.lengthInMinutes;
-    console.log('gap left ' + gapLeft);
+    let run = true;
     var slotEvents = slot.events;
-    slotEvents.forEach(slotEvent => {
+    for (let j=0; j<slotEvents.length && run; j++) {
+        let slotEvent = slotEvents[j];
         if (slotEvent.duration.lengthInMinutes < 60) {
             const timeThatWillMakeNoGap = gapLeft + slotEvent.duration.lengthInMinutes;
-            console.log(slotEvent.name + ' ' + timeThatWillMakeNoGap);
             if (timeThatWillMakeNoGap <= 60) {
-                for (let i=0; i<events.length; i++) {
-                    console.log('avilable event[' + i + '] length ' + events[i].duration.lengthInMinutes);
+                for (let i=0; i<events.length && run; i++) {
                     if (events[i].duration.lengthInMinutes === timeThatWillMakeNoGap) {
-                        console.log(`****** in ${slot.name} replacing ${slotEvent.name} with ${events[i].name} will optimize`);
-                        return;
+                        slot.replaceEvent(slotEvent, events[i]);
+                        events.splice(i, 1, slotEvent);
+                        run = false;
                     }
                 }
             }
         }
-    });
+    }
 };
 
 module.exports = slotOptimizer;

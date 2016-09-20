@@ -13,6 +13,10 @@ class Duration {
         this._lengthInMinutes -= duration.lengthInMinutes;
     }
 
+    addLengthBy(duration) {
+        this._lengthInMinutes += duration.lengthInMinutes;
+    }
+
     canYouAccomodate(duration) {
         return this._lengthInMinutes >= duration.lengthInMinutes;
     }

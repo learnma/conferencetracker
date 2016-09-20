@@ -19,7 +19,7 @@ const inputReader = function(stream) {
             const result = line.match(regex);
 
             if (!result) {
-                console.error(`${line} does not match the input contract. Ignoring the same`);
+                console.error(`ERROR: ${line} does not match the input contract. Ignoring the same`);
                 return;
             }
 

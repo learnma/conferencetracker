@@ -8,7 +8,6 @@ describe('schedule', () => {
         const promise = main(__dirname + '/data/default-input.txt');
         promise.then(conference => {
             expect(conference.schedule.length).toBe(2);
-            console.log(conference.schedule);
             let track1 = conference.schedule[0].schedule;
             let track2 = conference.schedule[1].schedule;
             let allevents = _.values(track1).concat(_.values(track2));

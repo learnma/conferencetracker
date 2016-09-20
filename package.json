@@ -4,6 +4,8 @@
   "description": "a conference management application to automate scheduling of events",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",  
+    "lint": "eslint src/**/*.js",
     "test.u": "jasmine test/test.u/**/*.js",
     "test.i": "jasmine test/test.i/**/*.js"
   },
