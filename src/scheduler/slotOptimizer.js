@@ -1,3 +1,8 @@
+/**
+ * slotOptimizer runs through the slot and attempts to swap
+ * events from master events array so that there is no gap 
+ * in the slot
+ */
 const slotOptimizer = (slot, events) => {
     const gapLeft = slot.remainingDuration.lengthInMinutes;
     let run = true;

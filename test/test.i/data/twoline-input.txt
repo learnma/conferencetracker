@@ -1,2 +1,6 @@
-Writing Fast Tests Against Enterprise Rails 60min
-Rails for Python Developers lightning
+
+Track 1 :: 
+09:00AM Writing Fast Tests Against Enterprise Rails 60min
+10:00AM Rails for Python Developers lightning
+12:00PM Lunch
+01:00PM Networking

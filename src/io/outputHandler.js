@@ -1,7 +1,7 @@
 
 /**
- * TODO
- *
+ * A function that abstracts to write the Conference schedule in a 
+ * given output stream
  */
 const outputHandler = function(stream, conference) {
     if (conference) {

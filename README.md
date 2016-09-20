@@ -1,5 +1,5 @@
 # conferencetracker
-A conference management for automating scheduling of events.
+A conference management for automating scheduling of events. This document contains following details:
 
 * Pre-requisite
 * How to run?
@@ -24,17 +24,17 @@ The application is a node.js based app and needs *node 6.3.0 or above* . The dep
 7. You can supply any input file by running the command node index.js <input-file.txt> <output-file.txt>
 
 ## Tooling
-**language**     - JavaScript (ES6 version)
-**linting**      - ESLint (the rules are configured in ./eslintrc.json)
-**unit tests**   - Jasmine
-**integ tests**  - Jasmine
+* **language**     - JavaScript (ES6 version)
+* **linting**      - ESLint (the rules are configured in ./eslintrc.json)
+* **unit tests**   - Jasmine
+* **integ tests**  - Jasmine
 
 ## Npm commands
-*npm install*    - Will install dependencies
-*npm start*      - Will run default input and show output
-*npm lint*       - Will run linting on source code
-*npm run test.u* - Will run all unit tests and show the results
-*npm run test.i* - Will run all integration tests and show the results
+* *npm install*    - Will install dependencies
+* *npm start*      - Will run default input and show output
+* *npm lint*       - Will run linting on source code
+* *npm run test.u* - Will run all unit tests and show the results
+* *npm run test.i* - Will run all integration tests and show the results
 
 ## Design
 The conferencetracker is a console based application that helps to automate scheduling of a conference. The input is parsed into *Event*s and

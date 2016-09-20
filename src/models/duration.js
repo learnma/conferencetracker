@@ -1,4 +1,9 @@
-
+/**
+ * A class to abstract "duration" within the app. Anytime duartion need is required
+ * this class is used. It centralize the unit and usage in minutes.
+ * 
+ * It also has factory method to create duartion of various purposes.
+ */
 class Duration {
 
     constructor(lengthInMinutes) {

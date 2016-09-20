@@ -6,6 +6,19 @@ const Conference = require('../models/conference');
 const slotFiller = require('./slotFiller');
 const slotOptimizer = require('./slotOptimizer');
 
+/**
+ * The schedule function is the core logic where events are scheduled. The 
+ * following logic is applied to schedule the talks:
+ *      The events array is passed as input to scheduler
+ *      The lightning talks are seperated from main events array
+ *      The scheduler run until all main events are allocated
+ *      The scheduler create tracks and assign slots to tracks
+ *      The track has morning slot, lunch slot and noon slot
+ *      As events are iterated, a slot is created and events are assigned to iterated
+ *      If a slot has a gap, an optimizer is run to change events to fill the slot
+ *      If slot has more room, the lightining event is added
+ *      Finally networking event is assigned for noon tasks
+ */
 const schedule = events => {
 
     // Create a conference

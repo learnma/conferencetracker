@@ -1,4 +1,18 @@
 
+/** 
+ * A class that abstarcts a conference. It provides the schedule in following structure
+ * Array of tracks.
+ * 
+ *  [
+ *      {
+ *          name: <track name>,
+ *          schedule: {
+ *              09:00AM: 'This is first talk 60min'
+ *              ...
+ *          }
+ *      }
+ *  ]
+ */
 class Conference {
 
     constructor(name, startdate, enddate) {
